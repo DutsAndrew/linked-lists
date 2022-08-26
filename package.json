@@ -1,0 +1,19 @@
+{
+  "name": "linked-lists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linked-lists.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DutsAndrew/linked-lists.git"
+  },
+  "author": "Andrew Dutson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DutsAndrew/linked-lists/issues"
+  },
+  "homepage": "https://github.com/DutsAndrew/linked-lists#readme"
+}
