@@ -47,5 +47,15 @@ describe('linked list testing', () => {
     newList.append('angelina');
     newList.append('raquel');
     expect(newList.getHead().value).toBe('angelina');
+  });
+
+  it('tail method returns the end of linked list', () => {
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    expect(newList.tail().value).toBe('anna');
   })
 })
