@@ -60,6 +60,18 @@ class LinkedList {
     }
     return currentNode.value;
   }
+  pop() {
+    if (this.head === null) return null;
+    let currentNode = this.head;
+    while (currentNode.nextNode) {
+      if (currentNode.nextNode.nextNode === null) {
+        let poppedNode = currentNode.nextNode.value;
+        currentNode.nextNode = currentNode.nextNode.nextNode;
+        return poppedNode;
+      }
+      currentNode = currentNode.nextNode;
+    }
+  }
 }
 
 class Node {

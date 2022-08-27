@@ -63,9 +63,9 @@ describe('linked list testing', () => {
   });
 
   it('at(index) method returns node that matches passed index', () => {
-    expect(newList.at(0)).toBe(null)
+    expect(newList.at(0)).toBe(null);
     newList.prepend('steve');
-    expect(newList.at(1)).toBe('steve')
+    expect(newList.at(1)).toBe('steve');
     newList.prepend('bob');
     newList.append('angelina');
     newList.append('raquel');
@@ -74,7 +74,22 @@ describe('linked list testing', () => {
     newList.append('john');
     newList.append('may');
     newList.append('zoe');
-    expect(newList.at(3)).toBe('angelina')
-    expect(newList.at(100)).toBe(null)
+    expect(newList.at(3)).toBe('angelina');
+    expect(newList.at(100)).toBe(null);
+  })
+
+  it('pop method removes last item in list', () => {
+    expect(newList.pop()).toBe(null);
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.pop()).toBe('zoe');
+    expect(newList.head.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode).toBe(null);
   })
 })
