@@ -9,18 +9,23 @@ class LinkedList {
       return this.head;
     }
     let currentNode = this.head;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
+    while (currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
     }
-    currentNode.next = newNode;
+    currentNode.nextNode = newNode;
     return this.head;
   }
   prepend(data) {
     const newNode = new Node(data);
-    if (this.head === null) this.head = newNode;
-      else {
-        this.head.nextNode = newNode;
-      }
+    if (this.head !== null) {
+      let currentHead = this.head;
+      this.head = newNode;
+      newNode.nextNode = currentHead;
+      return;
+    } else {
+      this.head = newNode;
+    }
+
   }
 }
 
