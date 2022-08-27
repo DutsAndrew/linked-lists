@@ -36,6 +36,7 @@ describe('linked list testing', () => {
   });
 
   it('size method returns the correct size of the linked list', () => {
+    expect(newList.size()).toBe(0);
     newList.prepend('steve');
     newList.prepend('bob');
     newList.append('angelina');
@@ -44,12 +45,14 @@ describe('linked list testing', () => {
   });
 
   it('head method returns correct head of linked list', () => {
+    expect(newList.getHead()).toBe(null);
     newList.append('angelina');
     newList.append('raquel');
     expect(newList.getHead().value).toBe('angelina');
   });
 
   it('tail method returns the end of linked list', () => {
+    expect(newList.tail()).toBe(null);
     newList.prepend('steve');
     newList.prepend('bob');
     newList.append('angelina');
@@ -57,5 +60,21 @@ describe('linked list testing', () => {
     newList.append('george');
     newList.append('anna');
     expect(newList.tail().value).toBe('anna');
+  });
+
+  it('at(index) method returns node that matches passed index', () => {
+    expect(newList.at(0)).toBe(null)
+    newList.prepend('steve');
+    expect(newList.at(1)).toBe('steve')
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.at(3)).toBe('angelina')
+    expect(newList.at(100)).toBe(null)
   })
 })
