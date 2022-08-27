@@ -33,5 +33,13 @@ describe('linked list testing', () => {
     expect(newList.head.nextNode.value).toBe('angelina');
     expect(newList.head.nextNode.nextNode.value).toBe('bob');
     expect(newList.head.nextNode.nextNode.nextNode.value).toBe('steve');
+  });
+
+  it('size method returns the correct size of the linked list', () => {
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    expect(newList.size()).toBe(4);
   })
 })
