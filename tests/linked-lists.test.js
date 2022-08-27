@@ -41,5 +41,11 @@ describe('linked list testing', () => {
     newList.append('angelina');
     newList.append('raquel');
     expect(newList.size()).toBe(4);
+  });
+
+  it('head method returns correct head of linked list', () => {
+    newList.append('angelina');
+    newList.append('raquel');
+    expect(newList.getHead().value).toBe('angelina');
   })
 })

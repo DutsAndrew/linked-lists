@@ -37,6 +37,9 @@ class LinkedList {
     }
     return sizeCount;
   }
+  getHead() {
+    return this.head;
+  }
 }
 
 class Node {
