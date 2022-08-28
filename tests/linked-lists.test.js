@@ -144,6 +144,22 @@ describe('linked list testing', () => {
     newList.append('john');
     newList.append('may');
     newList.append('zoe');
-    expect(newList.toString()).toBe(43);
+    expect(newList.toString()).toBe("( bob ) -> ( steve ) -> ( angelina ) -> ( raquel ) -> ( george ) -> ( anna ) -> ( john ) -> ( may ) ->  null");
+  });
+
+  it('insertAt inserts a new node at passed index', () => {
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.insertAt('maria', 4)).toBeDefined();
+    expect(newList.insertAt('andrew', 2)).toBeDefined();
+    expect(newList.insertAt('rachel', 10)).toBeDefined();
+    expect(newList.toString()).toBe("( bob ) -> ( steve ) -> ( andrew ) -> ( angelina ) -> ( raquel ) -> ( maria ) -> ( george ) -> ( anna ) -> ( john ) -> ( may ) -> ( rachel ) ->  null");
   })
 })

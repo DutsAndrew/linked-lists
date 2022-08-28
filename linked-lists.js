@@ -115,6 +115,21 @@ class LinkedList {
     fullList += ' null';
     return fullList;
   }
+  insertAt(value, index) {
+    if (this.head === null) return null;
+    let previousNode;
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentIndex !== index) {
+      currentIndex++;
+      previousNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+    const newNode = new Node(value);
+    previousNode.nextNode = newNode;
+    newNode.nextNode = currentNode;
+    return `${previousNode.value, currentNode.value}`;
+  }
 }
 
 class Node {
