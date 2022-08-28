@@ -91,5 +91,23 @@ describe('linked list testing', () => {
     newList.append('zoe');
     expect(newList.pop()).toBe('zoe');
     expect(newList.head.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode).toBe(null);
+  });
+
+  it('contains method returns the node that matches the passed value', () => {
+    expect(newList.contains('steve')).toBe(null);
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    expect(newList.contains('raquel')).toBe('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    expect(newList.contains('john')).toBe('john');
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.contains('steve')).toBe('steve');
+    expect(newList.contains('raquel')).toBe('raquel');
+    expect(newList.contains('zoe')).toBe('zoe');
   })
 })
