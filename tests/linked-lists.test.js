@@ -161,5 +161,21 @@ describe('linked list testing', () => {
     expect(newList.insertAt('andrew', 2)).toBeDefined();
     expect(newList.insertAt('rachel', 10)).toBeDefined();
     expect(newList.toString()).toBe("( bob ) -> ( steve ) -> ( andrew ) -> ( angelina ) -> ( raquel ) -> ( maria ) -> ( george ) -> ( anna ) -> ( john ) -> ( may ) -> ( rachel ) ->  null");
+  });
+
+  it('removeAt removes the node at the passed index', () => {
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    newList.append('may');
+    newList.append('zoe');
+    newList.removeAt(3);
+    newList.removeAt(0);
+    newList.removeAt(9);
+    expect(newList.toString()).toBe("( steve ) -> ( angelina ) -> ( george ) -> ( anna ) -> ( john ) -> ( may ) ->  null");
   })
 })

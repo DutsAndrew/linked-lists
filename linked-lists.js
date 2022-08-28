@@ -130,6 +130,23 @@ class LinkedList {
     newNode.nextNode = currentNode;
     return `${previousNode.value, currentNode.value}`;
   }
+  removeAt(index) {
+    if (this.head === null) return null;
+    let previousNode = null;
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentNode.nextNode) {
+      if (index === currentIndex) {
+        if (previousNode === null) {
+          return this.head = currentNode.nextNode;
+        }
+        return previousNode.nextNode = currentNode.nextNode;
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
+  }
 }
 
 class Node {
