@@ -102,6 +102,19 @@ class LinkedList {
     }
     return null;
   }
+  toString() {
+    if (this.head === null) return null;
+    let fullList = ``;
+    let currentNode = this.head;
+    let currentString = ``;
+    while (currentNode.nextNode) {
+      currentString = `( ${currentNode.value} ) -> `;
+      fullList += currentString;
+      currentNode = currentNode.nextNode;
+    }
+    fullList += ' null';
+    return fullList;
+  }
 }
 
 class Node {

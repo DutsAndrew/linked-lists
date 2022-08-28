@@ -131,5 +131,19 @@ describe('linked list testing', () => {
     newList.append('zoe');
     expect(newList.find('zoe')).toBe(8);
     expect(newList.find('yui')).toBe(null);
+  });
+
+  it('toString returns the entire list as a string', () => {
+    expect(newList.toString()).toBe(null);
+    newList.prepend('steve');
+    newList.prepend('bob');
+    newList.append('angelina');
+    newList.append('raquel');
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.toString()).toBe(43);
   })
 })
