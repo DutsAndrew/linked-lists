@@ -93,21 +93,43 @@ describe('linked list testing', () => {
     expect(newList.head.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode).toBe(null);
   });
 
-  it('contains method returns the node that matches the passed value', () => {
-    expect(newList.contains('steve')).toBe(null);
+  it('contains method returns true/false if node is in list', () => {
+    expect(newList.contains('steve')).toBe(false);
+    expect(newList.contains('leo')).toBe(false);
     newList.prepend('steve');
     newList.prepend('bob');
     newList.append('angelina');
     newList.append('raquel');
-    expect(newList.contains('raquel')).toBe('raquel');
+    expect(newList.contains('raquel')).toBe(true);
     newList.append('george');
     newList.append('anna');
     newList.append('john');
-    expect(newList.contains('john')).toBe('john');
+    expect(newList.contains('john')).toBe(true);
     newList.append('may');
     newList.append('zoe');
-    expect(newList.contains('steve')).toBe('steve');
-    expect(newList.contains('raquel')).toBe('raquel');
-    expect(newList.contains('zoe')).toBe('zoe');
+    expect(newList.contains('steve')).toBe(true);
+    expect(newList.contains('raquel')).toBe(true);
+    expect(newList.contains('zoe')).toBe(true);
+    expect(newList.contains('hanna')).toBe(false);
+    expect(newList.contains('mateo')).toBe(false);
+  });
+
+  it('find method returns index of node if a value matches the passed value', () => {
+    expect(newList.find('bobby')).toBe(null);
+    newList.prepend('steve');
+    newList.prepend('bob');
+    expect(newList.find('bob')).toBe(1);
+    newList.append('angelina');
+    expect(newList.find('angelina')).toBe(2);
+    newList.append('raquel');
+    expect(newList.find('raquel')).toBe(3);
+    newList.append('george');
+    newList.append('anna');
+    newList.append('john');
+    expect(newList.find('john')).toBe(6);
+    newList.append('may');
+    newList.append('zoe');
+    expect(newList.find('zoe')).toBe(8);
+    expect(newList.find('yui')).toBe(null);
   })
 })

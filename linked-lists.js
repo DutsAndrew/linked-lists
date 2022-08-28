@@ -73,15 +73,34 @@ class LinkedList {
     }
   }
   contains(value) {
-    if (this.head === null) return null;
+    if (this.head === null) return false;
     let currentNode = this.head;
     while (currentNode.nextNode) {
       if (currentNode.value === value) {
-        return currentNode.value;
+        return true;
       }
       currentNode = currentNode.nextNode;
     }
-    return currentNode.value
+    if (currentNode.value === value) {
+      return true;
+    }
+    return false;
+  }
+  find(value) {
+    if (this.head === null) return null;
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentNode.nextNode) {
+      currentIndex++;
+      if (currentNode.value === value) {
+        return currentIndex;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    if (currentNode.value === value) {
+      return currentIndex;
+    }
+    return null;
   }
 }
 
